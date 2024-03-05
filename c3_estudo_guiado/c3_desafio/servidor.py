@@ -1,5 +1,4 @@
 import socket
-
 from moduloCriptografia import descriptar, encriptar
 
 nome = input('Digite seu nome: ')
