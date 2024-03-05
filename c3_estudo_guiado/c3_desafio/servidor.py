@@ -1,4 +1,5 @@
 import socket
+
 from moduloCriptografia import descriptar, encriptar
 
 nome = input('Digite seu nome: ')
@@ -9,7 +10,7 @@ servidor.bind(('localhost', 8000))
 servidor.listen()
 cliente, endereco = servidor.accept()
 
-print('Conexão estabelecida: aguardando mensagem...')
+print('Conexão estabelecida: aguardando mensagens...')
 print('Após iniciar o chat, digite "Sair" para finalizá-lo!')
 print('----------------------------------------------------')
 

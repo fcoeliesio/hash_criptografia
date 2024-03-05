@@ -8,8 +8,8 @@ def carregar_chave():
 chave = carregar_chave()
 cipher = Fernet(chave)
 
-def encriptar(mensagem):
-    return cipher.encrypt(mensagem.encode('utf-8'))
+def encriptar(mensagem_enviada):
+    return cipher.encrypt(mensagem_enviada.encode('utf-8'))
 
-def descriptar(mensagem):
-    return cipher.decrypt(mensagem).decode('utf-8')
+def descriptar(mensagem_recebida):
+    return cipher.decrypt(mensagem_recebida).decode('utf-8')
