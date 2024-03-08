@@ -16,12 +16,12 @@ print('----------------------------------------------------')
 chat = True
 while chat:
     mensagem_recebida = descriptar(cliente.recv(2024))
-    if mensagem_recebida == 'Sair':
+    if mensagem_recebida.upper() == 'SAIR':
         chat = False
     else:
         print(mensagem_recebida)
         mensagem = input(f'{nome}: ')
-        if mensagem == 'Sair':
+        if mensagem.upper() == 'SAIR':
             cliente.send(encriptar(mensagem))
             chat = False
         else:
