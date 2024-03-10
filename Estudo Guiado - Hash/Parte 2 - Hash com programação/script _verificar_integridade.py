@@ -1,12 +1,12 @@
 import hashlib, timeit
 
 def calcular_hash(arquivo):
-    sha256 = hashlib.sha256()
+    sha512 = hashlib.sha512()
     with open(arquivo, 'rb') as f:
         # leitura do arquivo em blocos para eficiência
         for bloco in iter(lambda: f.read(4096), b''):
-            sha256.update(bloco)
-    return sha256.hexdigest()
+            sha512.update(bloco)
+    return sha512.hexdigest()
 
 def salvar_hash(arquivo, hash_calculado):
     with open(arquivo + '_hash.txt', 'w') as f:

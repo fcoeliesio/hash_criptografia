@@ -6,6 +6,7 @@ echo "----------"
 
 echo '"Minha cabeça é grande como os meus poemas."' >mensagem.txt
 echo "                 Carlos Drummond de Andrade" >>mensagem.txt
+
 echo "Mensagem modificada:"
 cat mensagem.txt
 echo "---------"
