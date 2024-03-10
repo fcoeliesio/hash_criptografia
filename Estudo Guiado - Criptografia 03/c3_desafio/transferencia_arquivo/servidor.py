@@ -31,6 +31,7 @@ while True:
         break
     dados_recebidos += parte
 
+# Salvando arquivo antes de descriptografá-lo
 with open('tenho_brio_criptografado.jpg', 'wb') as arquivo:
     arquivo.write(dados_recebidos)
 
