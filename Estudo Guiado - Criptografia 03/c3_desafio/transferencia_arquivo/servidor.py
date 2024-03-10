@@ -1,8 +1,16 @@
+from cryptography.fernet import Fernet
 import socket
-from chave import cipher
+import os
+
+# Criação da chave e armazenamento dela em um arquivo .TXT
+chave = Fernet.generate_key()
+with open('chave.txt', 'wb') as arquivo_chave:
+    arquivo_chave.write(chave)
+cipher = Fernet(chave)
 
 print('Aguardando arquivo do cliente...')
 
+# Iniciando o servidor
 servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 servidor.bind(('localhost', 8000))
 servidor.listen()
@@ -28,7 +36,7 @@ dados_decifrados = cipher.decrypt(dados_recebidos)
 with open('brio_recebido.jpg', 'wb') as arquivo:
     arquivo.write(dados_decifrados)
 
-print('Arquivo recebido!')
+print('Servidor: arquivo recebido com sucesso!')
 
 cliente.close()
 servidor.close()
