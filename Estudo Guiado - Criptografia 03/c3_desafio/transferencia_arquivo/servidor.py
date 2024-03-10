@@ -32,14 +32,14 @@ while True:
     dados_recebidos += parte
 
 # Salvando arquivo antes de descriptografá-lo
-with open('tenho_brio_criptografado.jpg', 'wb') as arquivo:
+with open('brio_criptografado.jpg', 'wb') as arquivo:
     arquivo.write(dados_recebidos)
 
 # Descriptografando os dados recebidos
 dados_decifrados = cipher.decrypt(dados_recebidos)
 
 # Salvando os dados recebidos em um arquivo
-with open('tenho_brio.jpg', 'wb') as arquivo:
+with open('brio_recebido.jpg', 'wb') as arquivo:
     arquivo.write(dados_decifrados)
 
 print('Arquivo recebido!')
